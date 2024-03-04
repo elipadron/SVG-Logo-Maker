@@ -1,21 +1,21 @@
 
 class Square {
-    constructor(size, color) {
-      this.size = size;
-      this.color = color;
-    }
+  constructor(color) {
+    this.color = color;
   }
-  
-  class Text {
-    constructor(content, fontSize, color) {
-      this.content = content;
-      this.fontSize = fontSize;
-      this.color = color;
-    }
+}
+
+class Text {
+  constructor(content, color) {
+    this.content = content;
+    this.color = color;
   }
-  
-  module.exports = {
-    Square,
-    Text,
-  };
-  
+}
+
+class Circle {
+  constructor(color) {
+    this.color = color;
+  }
+}
+
+module.exports = { Square, Text, Circle };
