@@ -16,7 +16,7 @@ async function main() {
       break;
     case 'Text':
       const text = new Text(userInput.content, userInput.textColor);
-      svgMarkup = `<text x="10" y="40" font-size="16" fill="${text.textColor}">${text.content}</text>`;
+      svgMarkup = `<text x="10" y="40" font-size="12" fill="${text.textColor}">${text.content}</text>`;
       break;
     case 'Circle':
       size = 160;
