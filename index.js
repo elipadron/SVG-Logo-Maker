@@ -7,6 +7,7 @@ async function main() {
 
   let svgMarkup;
   let size;
+
   switch (userInput.shape) {
     case 'Square':
       size = 100;
@@ -14,8 +15,8 @@ async function main() {
       svgMarkup = `<rect width="${size}" height="${size}" fill="${square.color}" />`;
       break;
     case 'Text':
-      const text = new Text(userInput.content, userInput.color);
-      svgMarkup = `<text x="10" y="40" font-size="16" fill="${text.color}">${text.content}</text>`;
+      const text = new Text(userInput.content, userInput.textColor);
+      svgMarkup = `<text x="10" y="40" font-size="16" fill="${text.textColor}">${text.content}</text>`;
       break;
     case 'Circle':
       size = 160;
@@ -59,12 +60,18 @@ async function promptUser() {
       name: 'content',
       message: 'Enter the text content:',
     },
+    {
+      type: 'input',
+      name: 'textColor',
+      message: 'Enter the text color:',
+    },
   ]);
 
   return { ...shapeAndColorAnswers, ...textContentAnswers };
 }
 
 main();
+
 
 
 

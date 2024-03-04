@@ -9,6 +9,8 @@ class Text {
   constructor(content, color) {
     this.content = content;
     this.color = color;
+    this.textColor = textColor;
+
   }
 }
 
