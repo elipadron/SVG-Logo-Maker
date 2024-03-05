@@ -48,6 +48,33 @@ async function promptUser() {
   return { ...shapeAndColorAnswers, ...textContentAnswers };
 }
 
+function generateSvgMarkup(userInput) {
+  let size;
+  let content;
 
+  switch (userInput.shape) {
+    case 'Square':
+      size = 100;
+      const square = new Square(userInput.color);
+      content = `<rect width="${size}" height="${size}" fill="${square.color}" />`;
+      break;
+    case 'Text':
+      const text = new Text(userInput.content, userInput.textColor);
+      content = `<text x="10" y="40" font-size="16" fill="${text.textColor}">${text.content}</text>`;
+      break;
+    case 'Circle':
+      size = 160;
+      const circle = new Circle(userInput.color);
+      content = `<circle cx="${size / 2}" cy="${size / 2}" r="${size / 2 - 10}" fill="${circle.color}" />`;
+      break;
+    default:
+      console.error('Invalid shape selected.');
+      return;
+  }
+
+  return { size, content };
+}
+
+main();
 
 
